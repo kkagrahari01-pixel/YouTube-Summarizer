@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>YouTube Summarizer</h1>
+      <p class="subtitle">Paste a YouTube link to get transcript + summary using Groq.</p>
+
+      <form id="summarize-form" class="card">
+        <label for="youtube-url">YouTube URL</label>
+        <input
+          id="youtube-url"
+          name="youtube-url"
+          type="url"
+          placeholder="https://www.youtube.com/watch?v=..."
+          required
+        />
+        <button id="submit-btn" type="submit">Generate</button>
+      </form>
+
+      <section id="status" class="status hidden"></section>
+
+      <section id="result" class="hidden">
+        <div class="card">
+          <h2>Video Title</h2>
+          <p id="video-title"></p>
+        </div>
+
+        <div class="card">
+          <h2>Summary</h2>
+          <pre id="summary"></pre>
+        </div>
+
+        <div class="card">
+          <h2>Transcript</h2>
+          <pre id="transcript"></pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
